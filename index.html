@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3ª Semana Academica  de TI</title>
+    <link rel="icon" href="public/img/logo-semana.png">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/styleVertical.css"> <!-- css nav lateral -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css' ">
+  </head>
+  <body>
+    <!-- Modal cadastro -->
+      <div class="modal fade" id="cadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content"
+        >
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h1 class="modal-title text-center" id="myModalLabel">Cadastre-se</h4>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs">
+              <li class="active cor"><a data-toggle="tab" href="#home">Não sou aluno</a></li>
+              <li class="cor"><a data-toggle="tab" href="#menu1">Sou aluno</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <h3 class="text-center">Por favor, preencha os dados abaixo:</h3>
+                <form action="" method="post">
+                  <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" required>
+                  <input type="email" name="email" class="form-control" placeholder="Digite seu email" required>
+                  <input type="text" name="tel" class="form-control" placeholder="Digite seu telefone" required>
+                  <button type="submit" class="btn btn-primary input-lg btn-lg in" name="cadastrar">Realizar Inscrição</button>
+                </form>
+              </div>
+              <div id="menu1" class="tab-pane fade">
+                <h3 class="text-center">Se você é aluno e deseja também um certificado de participação:</h3>
+                <p class="text-center">Você terá que se inscrever abaixo, e também inscrever-se no SIA - Por favor levar 1k de Alimento.</p>
+                <form class="" action="" method="post">
+                  <input type="text" name="matricula" class="form-control input-sm" placeholder="Digite sua matricula" required>
+                  <input type="text" name="nome" class="form-control input-sm" placeholder="Digite seu nome" required>
+                  <input type="email" name="email" class="form-control input-sm" placeholder="Digite seu email" required>
+                  <input type="text" name="tel" class="form-control input-sm" placeholder="Digite seu telefone" required>
+                  <p>Escolha o curso</p>
+                  <select class="form-control input-sm" name="escolha" required>
+                    <option value="ads">Analíse e Desenvolvimento de Sistemas</option>
+                    <option value="redes">Redes de Computadores</option>
+                  </select>
+                  <button type="submit" class="btn btn-primary input-lg btn-lg in" name="cadastrar">Realizar Inscrição</button>
+                </form>
+              </div>
+              <div id="menu2" class="tab-pane fade">
+                <h3>Menu 2</h3>
+                <p>Some content in menu 2.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- end Modal cadastro -->
+
+      <!-- Modal notificação -->
+        <div class="modal fade" id="sucesso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel">Parabéns, cadastro realizado com Sucesso !</h4>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-info text-center" role="alert">Cadastro realizado com sucesso, acesse seu email e verifique o cadastro...</div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- end Modal notificação -->
+
+      <!-- Modal notificação -->
+        <div class="modal fade" id="erro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="myModalLabel">Oppis !, Erro ao efetuar o cadastro</h4>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-danger text-center" role="alert">Desculpe, Ocorreu um erro ao cadastro-lo(a), verifique todos os campos e tente novamente !</div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- end Modal notificação -->
+
+
+    <!-- ========== Navigation ========== -->
+    <a class="navbar-brand" href="#"><img src="public/img/logo_estacio.png" class="logo" alt=""></a>
+    <!-- ========== Lateral Navi ========== -->
+    <nav id="cd-vertical-nav">
+      <ul>
+        <li>
+          <a href="#section1" data-number="1">
+            <span class="cd-dot"></span>
+            <span class="cd-label">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#section2" data-number="2">
+            <span class="cd-dot"></span>
+            <span class="cd-label">Programação</span>
+          </a>
+        </li>
+        <li>
+          <a href="#section3" data-number="3">
+            <span class="cd-dot"></span>
+            <span class="cd-label">Novidades</span>
+          </a>
+        </li>
+        <li>
+          <a href="#section4" data-number="4">
+            <span class="cd-dot"></span>
+            <span class="cd-label">Palestrantes</span>
+          </a>
+        </li>
+        <li>
+          <a href="#section5" data-number="5">
+            <span class="cd-dot"></span>
+            <span class="cd-label">Contatos</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <a class="cd-nav-trigger cd-img-replace">Open navigation<span></span></a>
+    <!-- ========== Banner ========== -->
+    <section id="section1" class="cd-section banners">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-offset-10 col-sm-offset-1 ">
+            <header class="">
+              <div class="col-md-8 col-md-offset-4 col-xs-10 col-xs-offset-3 logo-semana">
+                <img src="public/img/logo-semana.png">
+              </div>
+            </header>
+            <div class="col-md-10 col-md-offset-1 texto-banner">
+              <h1 class="text-center">3ª Semana Acadêmica de TI</h1>
+              <h2 class="text-center">26, 27 e 28 de Outubro - 2016</h2>
+              <h3 class="text-center">Estácio, Parangaba, Fortaleza-CE</h3>
+              <div class="group">
+                <a href="#">
+                  <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#cadastro">GARANTIR MINHA VAGA</button>
+                </a>
+              </div><!-- End group -->
+            </div>
+          </div>
+        </div>
+      </div><!-- End container -->
+    </section><!-- End banners -->
+    <!-- ======== Programação do Evento ======== -->
+    <section id="section2" class="cd-section">
+      <div class="container">
+        <div class="row programacao">
+          <header class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 programacao-texto">
+            <div class="teste">
+              <h3 class="text-center titulo-programacao">Bem-Vindo</h3>
+            </div>
+            <h1 class="text-center titulo-programacao">3ª SATI 2016</h1>
+            <p class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center titulo-programacao">A Semana Acadêmica de Tecnologia de Informação (SATI) será um evento que contará com palestras, maratona de programação, minicursos, iniciação científica e small talk.
+            </p>
+            <div class=" text-center col-md-4 col-xs-8 col-xs-offset-2 col-md-offset-4 ">
+              <a href="public/pages/programacao.html" >
+                <button  type="button" class="btn btn-primary btn-lg btn-block">Programação do Evento
+                </button>
+              </a>
+            </div>
+          </header>
+        </div><!-- End row -->
+      </div><!-- End container -->
+    </section>
+    <!-- ======== Novidades ======== -->
+    <section id="section3" class="cd-section">
+     	<div class="container">
+     		<div class="row novidades">
+          <div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0 col-novidades">
+            <section>
+              <h1 class="text-center">Novidades</h1>
+            </section>
+            <!-- carousel -->
+            <div id="carousel-example-generic-novidades" class="carousel slide" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <a href="https://www.facebook.com/tiestacioparangaba" target="_blank">
+                    <img  src="public/img/noticias-exemplo-1.jpg"  alt="...">
+                  </a>
+                  <div class="carousel-caption">
+                  </div>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <img src="public/img/noticia-2.jpg" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="https://www.facebook.com/tiestacioparangaba" target="_blank">
+                    <img src="public/img/noticia-divulgação-facebook.jpg" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-example-generic-novidades" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic-novidades" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div><!-- carousel-example-generic -->
+          </div><!-- End col-md-12 -->
+    		</div><!-- End row -->
+  		</div><!-- End container -->
+    </section>
+    <!-- ======== Palestrantes ======== -->
+    <!-- Modal Palestrante - Wellington Aguiar -->
+    <div class="modal fade" id="palestrante-aguiar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">A terceira plataforma, Onde vamos chegar ? </h4>
+            <p>
+              A palestra “A terceira plataforma, para onde vamos?” avançou para conceitos como mainframe, os PCs, a internet, computação em nuvem, redes sociais, mobilidade, Big data, gestão do conhecimento, inovação, inteligência artificial etc. , lembrando os passos que foi dando a tecnologia, com dados sobre como começou a era da informática na década de 1960.
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="public/img/palestrantes/aguiar-1.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10 pessoas-texto col-md-offset-0">
+                  <h4>
+                    Wellington Aguiar
+                  </h4>
+                   <p> Graduado em Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante - Wellington Aguiar -->
+
+     <!-- Modal Palestrante - palestrante-marcus-fontenelle -->
+    <div class="modal fade" id="palestrante-marcus-fontenelle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">  Mercado de Trabalho: Chegou a sua vez! </h4>
+            <p>
+              A evolução rápida das tecnologias demanda uma rápida adaptação das pessoas, das empresas, das leis e da sociedade em geral. A educação, a formação e perfil dos profissionais também precisa mudar. O que estamos fazendo diferente ? Onde nós vamos chegar e em que condições ?
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="public/img/palestrantes/marcus-fontenelle.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <h4>Marcus Fábio Fontenelle</h4>
+                  </p>
+                  <p>
+                    Fontenelle do Carmo Perito em Computação
+                    Forense (Judicial e Extrajudicial). Mestre em Informática
+                    Aplicada, tendo realizado cursos de extensão no
+                    Massachusetts Institute of Technology (MIT) em
+                    Cambridge/EUA na área de Cibersegurança. Vice-presidente
+                    da APECOF (Associação dos Peritos em Computação Forense
+                    do Estado do Ceará), membro da ISSA-Brasil (Associação de
+                    Segurança em Sistemas de Informação) e membro da ASEGI
+                    (Associação Brasileira de Profissionais e Empresas de
+                    Segurança da Informação e Defesa Cibernética). Detentor
+                    de certificações internacionais de diversas entidades,
+                    tais como: CompTIA, EXIN, LPI e
+                    Microsoft.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante - marcus-fontenelle  -->
+
+     <!-- Modal Palestrante - Inácio Gorayeb  -->
+    <div class="modal fade" id="palestrante-inacio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"> Palestra: O que podemos aprender com a Música?  </h4>
+            <p>
+              Através da música observamos que seguir aos padrões ensinados na academia é de grande importância para o desenvolvimento de um trabalho de qualidade, mesmo que em equipes geograficamente dispersas.
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/public/img/palestrantes/inacio.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <h4>Inácio Leite Gorayeb</h4>
+                  </p>
+                  <p>
+                    Formado em Ciência da Computação, especialista tem Teste de software e Mestrado em Engenharia de Software, possui atuação em diversas áreas da T.I como Engenharia de Software e Rede de Computadores. Atua também como professor na área de T.I com matérias como Linguagem de Programação, Modelagem de Software, Gerencia de Sistemas de Informação. Como um de suas contribuições mais interessantes destaca a criação de um processo de teste de software em seu trabalho ca Cobra Tecnologia e o Melhoramento do ambiente, aumento da qualidade de atendimento da T.I as necessidades da FAMAZ.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante -  -->
+
+    <!-- Modal Palestrante - Karla  -->
+    <div class="modal fade" id="palestrante-karla" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"> O profissional de ti na perspectiva do recursos humanos </h4>
+            <p>
+              Como se deu a evolução do mercado de trabalho na área de TI, as perspectivas de futuro para as profissões ligadas a esta área; quais os diferenciais competitivos dos profissionais de TI e o que as empresas esperam destes profissionais. Resumo do perfil da Profissional: Karla Ribeiro - Psicóloga e Coach, Especialista em Gestão de Pessoas, com mais de 15 anos de experiência na área de Recursos Humanos, atualmente Coordenadora de RH no Grupo Lanlink.
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/public/img/palestrantes/karla.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <b>Karla Ribeiro de Brito</b>
+                  </p>
+                  <p>
+                    Graduação em Psicologia pela Universidade de Fortaleza (2011). Tem experiência na área de Psicologia, com ênfase em Psicologia do Trabalho e Organizacional.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante -  -->
+
+    <!-- Modal Palestrante - Emilio  -->
+    <div class="modal fade" id="palestrante-emilio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"> Certificações em ti - Como adquirir </h4>
+            <p>
+
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/public/img/palestrantes/no-photo.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <b>Emilio da Costa Mansur</b>
+                  </p>
+                  <p>
+                    Possui graduação em Redes de Computadores pela Universidade Estácio de Sá (2016), graduação em Processamento de Dados pela Universidade da Amazônia(1999) e ensino-medio-segundo-grau pelo Colégio Marista Nossa Senhora de Nazaré(1994). Atualmente é Analista de Infraestrutura Senior da CPM Braxis. Tem experiência na área de Ciência da Computação, com ênfase em Sistemas Operacionais.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante -  -->
+
+    <!-- Modal Palestrante - Php com Rapadura  -->
+    <div class="modal fade" id="palestrante-atila-php" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"> Programando PHP Enquanto Come Rapadura </h4>
+            <p>
+              Nesta palestra abordaremos as principais características da Linguagem de Programação PHP, acabando com alguns mitos ruins sobre a linguagem, e fortalecendo a facilidade de se trabalhar com ela. Enaltecendo a importância de uma Comunidade de Desenvolvedores que possam cada vez mais agregar e compartilhar conhecimento de forma construtiva e colaborativa.
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/public/img/palestrantes/php-rapadura.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <b>Francisco Alessandro Feitoza da Silva</b>
+                  </p>
+                  <p>
+                    Programador e Desenvolvedor Web, Experiência maior em PHP (orientado à objeto), MySQL(Relacional), Python, ShellScript, GNU/Linux, HTML5, CSS3, javaScript, Java, PostGreSQL, Bootstrap.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante -  -->
+
+    <!-- Modal Palestrante - Ronnison Banco  -->
+    <div class="modal fade" id="palestrante-ronnison-banco" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"> Banco de dados para ninjas </h4>
+            <p>
+              O curso tem por objetivos ensinar a utilizar o Postgres para gerir grandes volumes de dados em ambientes organizacionais, seja no profissional de redes ou de análise e desenvolvimento de sistemas.
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/public/img/palestrantes/ronnison.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <b>Ronnison Reges Vidal</b>
+                  </p>
+                  <p>
+                    Possui graduação em Ciência da Computação pela Universidade do Estado do Rio Grande do Norte (2010) e mestrado em Ciência da Computação - UERN/UFERSA (2013). Atualmente é tutor de TI do Instituto Metrópole Digital (IMD), professor em tempo parcial da Faculdade de Ciências e Tecnologia Mater Christi (FCTMC) e professor substituto no Instituto Federal do Rio Grande do Norte (IFRN). Tem experiência na área de Ciência da Computação, com ênfase em Redes-em-chip, atuando principalmente nos seguintes temas: engenharia de software e dispositivos móveis.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante -  -->
+
+    <!-- Modal Palestrante - Ivoneide  -->
+    <div class="modal fade" id="palestrante-ivoneide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"> Introdução ao matlab noções de matemática</h4>
+            <p>
+
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/public/img/palestrantes/ivoneide.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <b>Maria Ivoneide Vital Rodrigues</b>
+                  </p>
+                  <p>
+                    É doutora e mestre em Desenvolvimento e Meio Ambiente pela Universidade Federal do Ceará e, também, mestre em Economia Rural, pela mesma Instituição. Possui graduação em Ciências Econômicas pela Universidade Federal do Ceará e graduação em Matemática pela Universidade Estadual do Ceará. Os termos mais frequentes na produção cientifica, tecnológica e artístico-cultural são: Análise Multivariada, Desenvolvimento Sustentável, Desertificação, Economia Ecológica, Educação, Governança e Políticas Públicas.
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante -  -->
+
+
+    <!-- Modal -->
+    <!-- Modal Palestrante -  -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"> Titulo da palestra </h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            </p>
+            <hr>
+            <div class="pessoas">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="/public/img/palestrantes/no-photo.jpg" class="img-circle " alt="...">
+                </div>
+                <div class="col-md-10">
+                  <p>
+                    <b>Daniel Techmacker</b>
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  </p>
+                </div> <!-- End col-md-10 -->
+              </div> <!-- End row -->
+            </div><!-- End pessoas -->
+          </div> <!-- End modal-body -->
+        </div> <!-- End modal-content -->
+      </div> <!-- End modal-dialog -->
+    </div> <!-- End Modal fade -->
+    <!-- End Modal Palestrante -  -->
+
+    <!-- == Inicio Palestrantes == -->
+    <section id="section4" class="cd-section palestrantes-fundo">
+      <div class="container">
+      	<div class="row palestrantes">
+          <div class="col-md-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 ">
+            <header>
+              <h1 class="text-center titulo-palestrantes"> Palestrantes </h1>
+            </header>
+            <!-- Carousel -->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-aguiar">
+                      <img src="public/img/palestrantes/aguiar-1.jpg" class="img-circle " alt="...">
+                      <h2 class="text-center">Wellington Aguiar</h2>
+                      <p class="text-center">Palestra: A terceira plataforma, Onde vamos chegar ?</p>
+                    </a>
+                  </div>
+
+                  <div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-marcus-fontenelle">
+                      <img src="public/img/palestrantes/marcus-fontenelle.jpg" class="img-circle" alt="...">
+                      <h2 class="text-center">Marcus Fontenelle</h2>
+                      <p class="text-center">Palestra: Mercado de trabalho: Chegou a sua vez! </p>
+                    </a>
+                  </div>
+
+                  <div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-inacio">
+                      <img src="public/img/palestrantes/inacio.jpg" class="img-circle" alt="...">
+                      <h2 class="text-center">Inácio Gorayeb</h2>
+                      <p class="text-center">Palestra: O que podemos aprender com a música? </p>
+                    </a>
+                  </div>
+
+                  <div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-karla">
+                      <img src="public/img/palestrantes/karla.jpg" class="img-circle" alt="...">
+                      <h2 class="text-center">Karla Ribeiro</h2>
+                      <p class="text-center">Palestra: O mercado de trabalho em ti na perspectiva do recursos humanos.</p>
+                    </a>
+                  </div>
+
+                </div> <!--End item active -->
+
+
+                <div class="item">
+
+                	<div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-ronnison-banco">
+                      <img src="public/img/palestrantes/ronnison.jpg" class="img-circle" alt="...">
+                      <h2 class="text-center">Ronnison Reges Vidal</h2>
+                      <p class="text-center">Mini curso: Banco de dados para ninjas</p>
+                    </a>
+                  </div>
+
+                  <div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-ivoneide">
+                      <img src="public/img/palestrantes/ivoneide.jpg" class="img-circle" alt="...">
+                      <h2 class="text-center">Ivoneide Vital</h2>
+                      <p class="text-center">Mini curso: Introdução ao matlab noções de matemática </p>
+                    </a>
+                  </div>
+
+                  <div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-atila-php">
+                      <img src="public/img/palestrantes/php-rapadura.jpg" class="img-circle" alt="...">
+                      <h2 class="text-center">PHP com rapadura Alessandro Feitoza</h2>
+                      <p class="text-center">Palestra: Programando php enquanto come rapadura </p>
+                    </a>
+                  </div>
+
+                  <div class="col-md-3 col-xs-6 palestrantes-item">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#palestrante-marcos">
+                      <img src="public/img/palestrantes/felipe.jpg" class="img-circle" alt="...">
+                      <h2 class="text-center">Filipe Torres Bezerra</h2>
+                      <p class="text-center">Palestra: Empreendedorismo no mercado de desenvolvimento mobile </p>
+                    </a>
+                  </div>
+
+                </div> <!-- End Item -->
+              </div> <!--End carousel-inner -->
+            </div> <!--End carousel-example-generic -->
+          </div> <!-- End col-md-10 col-sm-offset-1 -->
+        </div> <!-- End row palestrantes -->
+      </div> <!-- End container -->
+    </section><!-- End palestrantes-fundo-1 -->
+    <!-- ======== Contato ======== -->
+    <section id="section5" class="cd-section contato-fundo">
+      <div class="container">
+        <div class="row contato">
+          <div class="col-md-10 col-xs-8 col-md-offset-1 col-xs-offset-2">
+          <header>
+            <h1 class="text-center">Contato</h1>
+          </header>
+          <div class="text-center">
+            <p><span>Local: </span>Centro Universitário Estácio - Parangaba </p>
+            <p>Rua: Av. Senador Fernandes Távora, 137 - Jóquei Clube, Fortaleza - CE</p>
+            <p>Telefone:(85) 3194-9632 - Coordernação Análise e Desenvolvimento de Sistemas</p>
+            <p>Telefone:(85) 3194-9645 - Coordernação Redes de computadores</p>
+            <p>Envie um email com suas dúvidas, sugestões ou críticas.</p>
+            <p>Email: odecilia.benigno@estacio.br (ADS)</p>
+            <p>Email: pitagoras.martins@estacio.br (Redes)</p>
+          </div><!-- End row col-md-12 -->
+          </div>
+        </div><!-- End row contato -->
+      </div><!-- End container -->
+    </section><!-- End contato-fundo  -->
+    <!-- ======== Footer ======== -->
+    <footer col-md-10 col-xs-8 col-md-offset-1 col-xs-offset-2>
+      <p class="topo">
+        <a  href="#">Topo</a>
+      </p>
+      <p class="text-center">
+          © 2016 Todos os direitos reservados.
+          <br>Desenvolvido por <a href="#">CRM, Rodrigo GD, Cícero, Luana,Thiago, Erik, Walderlan Sena</a>
+      </p>
+    </footer>
+    <!-- ======== end ======== -->
+    <!-- Jquery -->
+    <script type="text/javascript" src="public/js/jquery.js"></script>
+    <!-- bootstrap -->
+    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+  	<!-- Script do nav lateral -->
+    <script type="text/javascript" src="public/js/navverrotativo.js"></script>
+    <script type="text/javascript" src="public/js/navvermodernizr.js"></script>
+    <!-- Script do nav lateral -->
+    <!-- script -->
+    <script type="text/javascript">
+      var texto = "#Ads & #Redes";
+      var result;
+      var count = 0;
+      function digitar() {
+        result = document.getElementById("feira");
+        window.setTimeout(function() { inserir(texto[count]) }, 200);
+      }
+      function inserir(letra) {
+        result.innerHTML += letra;
+        count++;
+      if(count < texto.length)
+        window.setTimeout(function() { inserir(texto[count]) }, 200);
+      }
+        window.onload = digitar;
+    </script>
+  </body>
+</html>

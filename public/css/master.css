@@ -1,0 +1,55 @@
+/*
+  # Css pagina restrita
+  # Css - Walderlan Sena
+*/
+body{
+  background: url("../img/bg.jpg") no-repeat center fixed;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size: cover;
+}
+img{
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+form input{
+  width: 400px !important;
+  display: block;
+  margin: 0 auto;
+}
+.ds{
+  margin-top: 100px;
+  color: #FFF;
+  font-weight: bold;
+}
+.ds a{
+  color:rgb(4, 188, 213);
+}
+
+/* ================ AREA RESTRITA ================ */
+.topo{
+  background-color: rgb(57, 65, 73);
+  box-shadow: 5px 5px 40px rgb(14, 14, 14);
+  border-top: 5px solid #FFF;
+}
+.topo img{
+  margin-top: 0 !important;
+  width: 100px !important;
+}
+.corpo{
+  background-color: rgb(57, 65, 73);
+  box-shadow: 5px 5px 40px rgb(14, 14, 14);
+  margin-top: 10px;
+}
+table th {
+  text-align: center;
+}
+button{
+  float: right;
+}
+.panel{
+  margin-top: 40px;
+  text-align: center;
+}

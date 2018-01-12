@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Pagina Programação*/
+body{
+	font-family: "Open Sans", sans-serif !important;
+}
+h1{
+	padding-top:40px;
+}
+h2{
+	padding-top:30px;
+}
+
+.logo-estacio-2{
+	margin-top:-9px !important;
+
+}
+.menu-programacao{
+	background:url(../img/tela-azul.jpg);
+		
+}
+.menu-programacao a{
+	color:#fefefe !important;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.menu-programacao li{
+	
+}
+
+/*
+ * Footer
+ */
+
+.footer {
+  padding: 40px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+  font-family: "Open Sans", sans-serif !important;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
